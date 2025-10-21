@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker 💰</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Expense Tracker</h1>
+            <button id="themeToggle" class="theme-btn">🌙</button>
+        </header>
+
+        <section class="balance-section">
+            <h2>Your Balance</h2>
+            <p id="balance">₹0.00</p>
+        </section>
+
+        <section class="input-section">
+            <input type="text" id="desc" placeholder="Enter Description">
+            <input type="number" id="amount" placeholder="Enter Amount">
+            <button id="addBtn">Add</button>
+        </section>
+
+        <section class="list-section">
+            <h3>Transaction History</h3>
+            <ul id="expense-list"></ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>Made by @ Habiba </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
