@@ -7,13 +7,13 @@ const themeToggle = document.getElementById("themeToggle");
 
 let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
-// ✅ Update Total Balance
+// Update Total Balance
 function updateBalance() {
     const total = expenses.reduce((sum, item) => sum + item.amount, 0);
     balance.textContent = `₹${total.toFixed(2)}`;
 }
 
-// ✅ Display Expense List
+// Display Expense List
 function displayExpenses() {
     expenseList.innerHTML = "";
     expenses.forEach((exp, index) => {
@@ -28,14 +28,14 @@ function displayExpenses() {
     updateBalance();
 }
 
-// ✅ Delete Expense
+// Delete Expense
 function deleteExpense(index) {
     expenses.splice(index, 1);
     localStorage.setItem("expenses", JSON.stringify(expenses));
     displayExpenses();
 }
 
-// ✅ Add New Expense
+// Add New Expense
 addBtn.addEventListener("click", () => {
     const descValue = desc.value.trim();
     const amountValue = parseFloat(amount.value.trim());
@@ -54,7 +54,7 @@ addBtn.addEventListener("click", () => {
     displayExpenses();
 });
 
-// ✅ Theme Toggle (Dark / Light Mode)
+// Theme Toggle (Dark / Light Mode)
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     const isDark = document.body.classList.contains("dark");
@@ -62,7 +62,7 @@ themeToggle.addEventListener("click", () => {
     localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-// ✅ Load Saved Theme
+//  Load Saved Theme
 window.onload = () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
